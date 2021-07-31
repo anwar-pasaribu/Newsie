@@ -7,7 +7,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import dagger.android.AndroidInjector
@@ -32,19 +32,23 @@ class MainActivity : BaseActivity<NewsViewModel>(), HasSupportFragmentInjector {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val navController = findNavController(R.id.nav_movies_host_fragment)
+        val navController = findNavController(R.id.nav_news_host_fragment)
         navController.setGraph(R.navigation.news_graph, intent.extras)
         setupActionBarWithNavController(navController)
     }
 
     override fun onBackPressed() {
-        val findNavController = NavHostFragment.findNavController(nav_movies_host_fragment)
+        val findNavController = NavHostFragment.findNavController(nav_news_host_fragment)
         when (findNavController.currentDestination?.id) {
             R.id.details -> findNavController.popBackStack()
-            R.id.movies -> finish()
+            R.id.news_list -> finish()
             else -> super.onBackPressed()
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        return NavHostFragment.findNavController(nav_news_host_fragment).navigateUp()
+            || super.onSupportNavigateUp()
+    }
 }
 

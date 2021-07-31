@@ -2,16 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/movies_graph"
-    app:startDestination="@id/movies">
+    android:id="@+id/news_graph"
+    app:startDestination="@id/news_list">
 
     <fragment
-        android:id="@+id/movies"
+        android:id="@+id/news_list"
         android:name="com.anwar.test.newslist.presentation.NewsListFragment"
         android:label="Top Stories"
         tools:layout="@layout/fragment_news_list">
         <action
-            android:id="@+id/action_from_movies_to_details"
+            android:id="@+id/action_from_list_to_details"
             app:destination="@id/details" />
     </fragment>
 

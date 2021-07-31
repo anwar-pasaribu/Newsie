@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Newsie</string>
+
+    <string name="lbl_score">Score : %s</string>
+    <string name="lbl_comment_count">Comment : %s</string>
+    <string name="some_error">Some error occurred !</string>
+    <string name="msg_news_disliked">News Removed from favourites</string>
+    <string name="msg_news_liked">News added to favourites</string>
+    <string name="fetch_news_error">No news found</string>
+    <string name="fetch_trailers_error">No comments found</string>
+    <string name="button_retry">Retry</string>
+    <string name="search_placeholder">Search news</string>
+
+</resources>
